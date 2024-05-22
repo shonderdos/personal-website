@@ -1,0 +1,24 @@
+name: "Example Push"
+on:
+  workflow_dispatch:
+  schedule:
+    # Runs at every 12AM UTC
+    - cron: "0 0 * * *"
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Create report file
+        run: date +%s > report.txt
+      - name: Commit report
+        run: |
+          git config --global user.name 'Mr. Automation'
+          git config --global user.email 'automations@aol.com'
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
+          git checkout "${GITHUB_REF:11}"
+          git commit -am "Automated report"
+          git push
+
+
+          
