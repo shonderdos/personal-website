@@ -15,7 +15,7 @@ jobs:
       - name: Install dependencies
         run: npm install marked
       - name: Create HTML file
-        run: curl https://raw.githubusercontent.com/shonderdos/shonderdos/main/README.md | marked -o test.html
+        run: curl https://raw.githubusercontent.com/shonderdos/shonderdos/main/README.md | marked -o index.html
       - name: Commit HTML file
         run: |
           git config --global user.name 'Mr. Automation'
