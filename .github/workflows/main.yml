@@ -13,7 +13,7 @@ jobs:
         with: 
           node-version: '18'
       - name: Install dependencies
-        run: npm install marked
+        run: npm install  -g marked
       - name: Create HTML file
         run: curl https://raw.githubusercontent.com/shonderdos/shonderdos/main/README.md | marked -o index.html
       - name: Commit HTML file
