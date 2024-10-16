@@ -10,21 +10,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-        with: 
-          node-version: '18'
+        with:
+          node-version: "18"
       - name: Install dependencies
         run: npm install
       - name: Create HTML file
-        run: curl https://raw.githubusercontent.com/shonderdos/shonderdos/main/README.md | marked -o index.html
+        run: npm run build
       - name: Commit HTML file
         run: |
-          git config --global user.name 'Mr. Automation'
-          git config --global user.email 'automations@aol.com'
+          git config --global user.name 'Github Workflow'
+          git config --global user.email 'github@workflow.com'
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/$GITHUB_REPOSITORY
           git checkout "${GITHUB_REF:11}"
           git add .
           git commit -m "Updated HTML file"
           git push
-
-
-          
