@@ -1,5 +1,2 @@
 {
-  "scripts": {
-    "build": "curl https://raw.githubusercontent.com/shonderdos/shonderdos/main/README.md | marked -o index.html"
-  }
 }
