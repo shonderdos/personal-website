@@ -2,24 +2,49 @@
   <meta charset="UTF-8">
   <title>Serge Honderdos</title>
   <style>
-@media print {
+:root {
+  color-scheme: light dark;
+}
+
+body { 
+  background-color: light-dark(#F2EFDF, #1E2326);
+  color: light-dark(#5C6A72, #D3C6AA);
+
   a {
-    text-decoration: none;
+    color: light-dark(#3A94C5, #7FBBB3)
   }
 
-}
-body { 
+  a:visited {
+    color: light-dark(#DF69BA, #D699B6)
+  }
+
   line-height: 1.4;
-    font-size: 16px;
-    padding: 0 10px;
-    margin: 50px auto;
-    max-width: 650px;
+    font-size: 1.2em;
+    margin: 0 auto;
+    max-width: 950px;
 }
 
-#maincontent
-{
+hr {
+    border-color: light-dark(#5C6A72, #D3C6AA)
+}
+
+#maincontent {
 max-width:42em;margin:15 auto;
 margin-top: 70px;
+}
+@media print {
+  body{
+    font-size: 16px;
+    color: black;
+  }
+  a {
+    color: black;
+    text-decoration: none;
+  }
+  a:visited {
+    color: black;
+  }
+
 }
 </style>	
 </head>
@@ -28,7 +53,5 @@ margin-top: 70px;
 <body>
 <div id="maincontent">
 {{.Content}}
-
-
 </div></body></html>
 
