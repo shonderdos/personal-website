@@ -4,18 +4,23 @@
   <style>
 :root {
   color-scheme: light dark;
+
+  --bg_dim: light-dark(#F2EFDF, #1E2326);
+  --fg: light-dark(#5C6A72, #D3C6AA);
+  --blue: light-dark(#3A94C5, #7FBBB3);
+  --purple: light-dark(#DF69BA, #D699B6);
 }
 
 body { 
-  background-color: light-dark(#F2EFDF, #1E2326);
-  color: light-dark(#5C6A72, #D3C6AA);
+  background-color: var(--bg_dim);
+  color: var(--fg);
 
   a {
-    color: light-dark(#3A94C5, #7FBBB3)
+    color: var(--blue);
   }
 
   a:visited {
-    color: light-dark(#DF69BA, #D699B6)
+    color: var(--purple);
   }
 
   line-height: 1.4;
@@ -25,7 +30,7 @@ body {
 }
 
 hr {
-    border-color: light-dark(#5C6A72, #D3C6AA)
+    border-color: var(--fg);
 }
 
 #maincontent {
