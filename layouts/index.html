@@ -1,62 +1,88 @@
-<html><head>
+<html>
+
+<head>
   <meta charset="UTF-8">
   <title>Serge Honderdos</title>
   <style>
-:root {
-  color-scheme: light dark;
+    :root {
+      color-scheme: light dark;
 
-  --bg_dim: light-dark(#F2EFDF, #1E2326);
-  --fg: light-dark(#5C6A72, #D3C6AA);
-  --blue: light-dark(#3A94C5, #7FBBB3);
-  --purple: light-dark(#DF69BA, #D699B6);
-}
+      --bg_dim: light-dark(#F2EFDF, #1E2326);
+      --fg: light-dark(#5C6A72, #D3C6AA);
+      --blue: light-dark(#3A94C5, #7FBBB3);
+      --purple: light-dark(#DF69BA, #D699B6);
+    }
 
-body { 
-  background-color: var(--bg_dim);
-  color: var(--fg);
+    body {
+      background-color: var(--bg_dim);
+      color: var(--fg);
 
-  a {
-    color: var(--blue);
-  }
+      a {
+        color: var(--blue);
+      }
 
-  a:visited {
-    color: var(--purple);
-  }
+      a:visited {
+        color: var(--purple);
+      }
 
-  line-height: 1.4;
-    font-size: 1.2em;
-    margin: 0 auto;
-    max-width: 950px;
-}
+      line-height: 1.4;
+      font-size: 1.2em;
+      margin: 0 auto;
+      max-width: 950px;
+    }
 
-hr {
-    border-color: var(--fg);
-}
+    hr {
+      border-color: var(--fg);
+    }
 
-#maincontent {
-max-width:42em;margin:15 auto;
-margin-top: 70px;
-}
-@media print {
-  body{
-    font-size: 16px;
-    color: black;
-  }
-  a {
-    color: black;
-    text-decoration: none;
-  }
-  a:visited {
-    color: black;
-  }
+    #maincontent {
+      max-width: 42em;
+      margin: 15 auto;
+      margin-top: 70px;
+    }
 
-}
-</style>	
+    @media print {
+      body {
+        font-size: 16px;
+        color: black;
+      }
+
+      a {
+        color: black;
+        text-decoration: none;
+      }
+
+      a:visited {
+        color: black;
+      }
+
+    }
+  </style>
 </head>
 
 
 <body>
-<div id="maincontent">
-{{.Content}}
-</div></body></html>
+  <div id="maincontent">
+    <select>
+      {{ range $.Site.Home.AllTranslations }}
+      <option {{ if in .RelPermalink $.Page.Language.Lang }}selected{{ end }} value="{{.RelPermalink}}">
+        {{ .Language.LanguageName }}
+      </option>
+      {{ end }}
+    </select>
+    {{.Content}}
+  </div>
+</body>
 
+
+<script>
+  const selectElm = document.querySelector('select')
+  const changeLang = (event) => {
+    window.location.href = event.target.value
+  }
+  selectElm.addEventListener('change', changeLang)
+
+
+</script>
+
+</html>
