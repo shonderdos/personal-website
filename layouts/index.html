@@ -56,6 +56,10 @@
         color: black;
       }
 
+      .no-print {
+        display: none !important
+      }
+
       a {
         color: black;
         text-decoration: none;
@@ -72,7 +76,7 @@
 
 <body>
   <div id="maincontent">
-    <select>
+    <select class="no-print">
       {{ range $.Site.Home.AllTranslations }}
       <option {{ if in .RelPermalink $.Page.Language.Lang }}selected{{ end }} value="{{.RelPermalink}}">
         {{ .Language.LanguageName }}
