@@ -20,6 +20,7 @@
       background-color: var(--bg_dim);
       color: var(--fg);
 
+      font-size: 1.25em;
       font-family: "Roboto", serif;
       font-optical-sizing: auto;
       font-weight: 330;
@@ -35,9 +36,11 @@
       }
 
       line-height: 1.4;
-      font-size: 1.25em;
       margin: 0 auto;
-      max-width: 950px;
+    }
+
+    select {
+      display: block
     }
 
     hr {
@@ -45,9 +48,15 @@
     }
 
     #maincontent {
-      max-width: 42em;
-      margin: 15 auto;
+      max-width: 47em;
+      margin: 0 auto;
       margin-top: 70px;
+    }
+
+    img {
+      float: right;
+      border-radius: 10px;
+      margin: 0 0 25px 25px;
     }
 
     @media print {
@@ -83,6 +92,9 @@
       </option>
       {{ end }}
     </select>
+    {{ $image := resources.Get "headshot.jpeg" }}
+    {{ $image := $image.Resize "x430" }}
+    <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}">
     {{.Content}}
   </div>
 </body>
