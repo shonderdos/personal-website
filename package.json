@@ -1,2 +1,8 @@
 {
+  "scripts": {
+    "dev": "hugo serve"
+  },
+  "devDependencies": {
+    "prettier": "3.4.2"
+  }
 }

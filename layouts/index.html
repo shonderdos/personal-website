@@ -5,27 +5,62 @@
   <title>Serge Honderdos</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap" rel="stylesheet">
+  <link rel='stylesheet' href='//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack-subset.css'>
   <style>
     :root {
       color-scheme: light dark;
 
       --bg_dim: light-dark(#F2EFDF, #1E2326);
+      --bg_0: light-dark(#FFFBEF, #272E33);
+      --bg_3: light-dark(#EDEADA, #495156);
+      --bg_red: light-dark(#FFE7DE, #4C3743);
+      --bg_blue: light-dark(#ECF5ED, #384B55);
       --fg: light-dark(#5C6A72, #D3C6AA);
       --blue: light-dark(#3A94C5, #7FBBB3);
+      --red: light-dark(#F85552, #E67E80);
+      --green: light-dark(#8DA101, #A7C080);
       --purple: light-dark(#DF69BA, #D699B6);
+      --statusline1: light-dark(#93B259, #A7C080);
     }
 
+    ::selection {
+      background: var(--bg_red);
+    }
+
+    .experience {
+      margin-block: 4rem;
+
+      .company {
+        font-weight: 600;
+        color: var(--red);
+      }
+
+      .role {
+        color: var(--green)
+      }
+    }
+
+    .technologies {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.1rem;
+
+      li {
+        background-color: var(--bg_blue);
+        color: var(--blue);
+        padding: 5px 10px;
+      }
+    }
+
+
     body {
-      background-color: var(--bg_dim);
+      background-color: var(--bg_0);
       color: var(--fg);
 
-      font-size: 1.25em;
-      font-family: "Roboto", serif;
-      font-optical-sizing: auto;
-      font-weight: 330;
-      font-style: normal;
-      font-variation-settings: "wdth" 100;
+      font-family: "Hack", serif;
 
       a {
         color: var(--blue);
@@ -35,8 +70,7 @@
         color: var(--purple);
       }
 
-      line-height: 1.4;
-      margin: 0 auto;
+      line-height: 1.7;
     }
 
     select {
@@ -44,14 +78,15 @@
     }
 
     hr {
-      border-color: var(--fg);
+      border-color: var(--bg_3);
     }
 
     #maincontent {
-      max-width: 47em;
+      max-width: 750px;
       margin: 0 auto;
       margin-top: 70px;
     }
+
 
     img {
       float: right;
@@ -92,10 +127,31 @@
       </option>
       {{ end }}
     </select>
-    {{ $image := resources.Get "headshot.jpeg" }}
-    {{ $image := $image.Resize "x430" }}
-    <img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}">
     {{.Content}}
+
+
+    {{ $myData := index .Site.Data .Lang }}
+    {{ with $myData.experiences }}
+    {{range .jobs}}
+    <div class="experience">
+      <p>
+        <span class="company">{{ .company }}</span> <span class="role">{{ .role }}</span> ({{.startDate}} -
+        {{.endDate}})
+      </p>
+      {{ if .description }}
+      <p>{{ .description }}</p>
+      {{ end }}
+      {{ if .technologies }}
+      <ul class="technologies">
+        {{ range .technologies }}
+        <li>{{ . }}</li>
+        {{ end }}
+      </ul>
+      {{end}}
+    </div>
+    {{end}}
+    {{ end }}
+
   </div>
 </body>
 
@@ -106,7 +162,6 @@
     window.location.href = event.target.value
   }
   selectElm.addEventListener('change', changeLang)
-
 
 </script>
 
