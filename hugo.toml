@@ -1,4 +1,4 @@
-baseURL = 'https://shonderdos.github.io/'
+baseURL = 'https://shonderdos.nl/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
 theme = 'ananke'
