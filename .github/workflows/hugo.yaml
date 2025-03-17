@@ -59,7 +59,7 @@ jobs:
           hugo \
             --gc \
             --minify \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"        
+            --baseURL "https://www.shonderdos.nl/"        
       - name: Upload artifact from public folder
         uses: actions/upload-artifact@v4
         with: 
