@@ -1,7 +1,5 @@
 baseURL = 'https://shonderdos.nl/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
-theme = 'ananke'
 defaultContentLanguage = 'en'
 defaultContentLanguageInSubdir = true
 [languages]
@@ -9,11 +7,9 @@ defaultContentLanguageInSubdir = true
     languageCode = 'nl-NL'
     languageDirection = 'ltr'
     languageName = 'Nederlands'
-    title = 'Serge Honderdos'
     weight = 1
   [languages.en]
     languageCode = 'en-US'
     languageDirection = 'ltr'
     languageName = 'English'
-    title = 'Serge Honderdos'
     weight = 2

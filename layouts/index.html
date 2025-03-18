@@ -45,6 +45,30 @@
         background: var(--bg_red);
       }
 
+      .hero {
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+
+      .hero--content {
+        max-width: 920px;
+      }
+
+      .hero--content em {
+        background-color: var(--bg_blue);
+        color: var(--blue);
+        padding: 5px 10px;
+        font-style: normal;
+      }
+
+      .hero--scroll-down {
+        position: absolute;
+        bottom: 2em;
+      }
+
       .experience {
         margin-block: 4rem;
 
@@ -133,6 +157,10 @@
   </head>
 
   <body>
+    <div class="hero">
+      <div class="hero--content">{{ .Content }}</div>
+      <div class="hero--scroll-down">scroll down</div>
+    </div>
     <div id="maincontent">
       <select class="no-print">
         {{ range $.Site.Home.AllTranslations }}
@@ -151,8 +179,8 @@
         </option>
         {{ end }}
       </select>
-      {{.Content}} {{ $myData := index .Site.Data .Lang }} {{ with
-      $myData.experiences }} {{range .jobs}}
+      {{ $myData := index .Site.Data .Lang }} {{ with $myData.experiences }}
+      {{range .jobs}}
       <div class="experience">
         <p>
           <span class="company">{{ .company }}</span>
