@@ -1,15 +1,2 @@
 baseURL = 'https://shonderdos.nl/'
 languageCode = 'en-us'
-defaultContentLanguage = 'en'
-defaultContentLanguageInSubdir = true
-[languages]
-  [languages.nl]
-    languageCode = 'nl-NL'
-    languageDirection = 'ltr'
-    languageName = 'Nederlands'
-    weight = 1
-  [languages.en]
-    languageCode = 'en-US'
-    languageDirection = 'ltr'
-    languageName = 'English'
-    weight = 2

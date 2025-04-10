@@ -1,5 +1,4 @@
 {{ define "main" }}
-
 <div class="hero">
   <div class="hero--content">
     <h2 class="hero--name">{{ .Params.name }}</h2>
@@ -8,25 +7,7 @@
   <div class="hero--scroll-down">scroll down</div>
 </div>
 <div id="maincontent">
-  <select class="no-print">
-    {{ range $.Site.Home.AllTranslations }}
-    <option
-      {{
-      if
-      in
-      .RelPermalink
-      $.Page.Language.Lang
-      }}selected{{
-      end
-      }}
-      value="{{.RelPermalink}}"
-    >
-      {{ .Language.LanguageName }}
-    </option>
-    {{ end }}
-  </select>
-  {{ $myData := index .Site.Data .Lang }} {{ with $myData.experiences }} {{range
-  .jobs}}
+  {{ with .Site.Data.experiences }} {{range .jobs}}
   <div class="experience">
     <p>
       <span class="company">{{ .company }}</span>
