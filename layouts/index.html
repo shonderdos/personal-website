@@ -1,210 +1,47 @@
-<html>
-  <head>
-    <meta charset="UTF-8" />
+{{ define "main" }}
 
-    <title>Serge Honderdos - Angular Developer Expert</title>
-    <meta
-      name="robots"
-      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
-    />
-    <meta
-      name="description"
-      content="A senior software engineer with 10 years of experience in developing enterprise applications"
-    />
-    <meta name="googlebot" content="notranslate" />
-
-    <link rel="alternate" href="https://shonderdos.nl/en/" hreflang="en" />
-    <link rel="alternate" href="https://shonderdos.nl/nl/" hreflang="nl" />
-
-    <link rel="canonical" href="{{ .Permalink }}" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      rel="stylesheet"
-      href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack-subset.css"
-    />
-    <style>
-      :root {
-        color-scheme: light dark;
-
-        --bg_dim: light-dark(#f2efdf, #1e2326);
-        --bg_0: light-dark(#fffbef, #272e33);
-        --bg_3: light-dark(#edeada, #495156);
-        --bg_red: light-dark(#ffe7de, #4c3743);
-        --bg_blue: light-dark(#ecf5ed, #384b55);
-        --fg: light-dark(#5c6a72, #d3c6aa);
-        --blue: light-dark(#3a94c5, #7fbbb3);
-        --red: light-dark(#f85552, #e67e80);
-        --green: light-dark(#8da101, #a7c080);
-        --purple: light-dark(#df69ba, #d699b6);
-        --statusline1: light-dark(#93b259, #a7c080);
-      }
-
-      ::selection {
-        background: var(--bg_red);
-      }
-
-      .hero {
-        display: flex;
-        height: 100vh;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-      }
-
-      .hero--content {
-        max-width: 920px;
-      }
-
-      .hero--content em {
-        background-color: var(--bg_blue);
-        color: var(--blue);
-        padding: 5px 10px;
-        font-style: normal;
-      }
-
-      .hero--scroll-down {
-        position: absolute;
-        bottom: 2em;
-      }
-
-      .experience {
-        margin-block: 4rem;
-
-        .company {
-          font-weight: 600;
-          color: var(--red);
-        }
-
-        .role {
-          color: var(--green);
-        }
-      }
-
-      .technologies {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1.1rem;
-
-        li {
-          background-color: var(--bg_blue);
-          color: var(--blue);
-          padding: 5px 10px;
-        }
-      }
-
-      body {
-        background-color: var(--bg_0);
-        color: var(--fg);
-
-        font-family: "Hack", serif;
-
-        a {
-          color: var(--blue);
-        }
-
-        a:visited {
-          color: var(--purple);
-        }
-
-        line-height: 1.7;
-      }
-
-      select {
-        display: block;
-      }
-
-      hr {
-        border-color: var(--bg_3);
-      }
-
-      #maincontent {
-        max-width: 750px;
-        margin: 0 auto;
-        margin-top: 70px;
-      }
-
-      img {
-        float: right;
-        border-radius: 10px;
-        margin: 0 0 25px 25px;
-      }
-
-      @media print {
-        body {
-          font-size: 16px;
-          color: black;
-        }
-
-        .no-print {
-          display: none !important;
-        }
-
-        a {
-          color: black;
-          text-decoration: none;
-        }
-
-        a:visited {
-          color: black;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <div class="hero">
-      <div class="hero--content">{{ .Content }}</div>
-      <div class="hero--scroll-down">scroll down</div>
-    </div>
-    <div id="maincontent">
-      <select class="no-print">
-        {{ range $.Site.Home.AllTranslations }}
-        <option
-          {{
-          if
-          in
-          .RelPermalink
-          $.Page.Language.Lang
-          }}selected{{
-          end
-          }}
-          value="{{.RelPermalink}}"
-        >
-          {{ .Language.LanguageName }}
-        </option>
-        {{ end }}
-      </select>
-      {{ $myData := index .Site.Data .Lang }} {{ with $myData.experiences }}
-      {{range .jobs}}
-      <div class="experience">
-        <p>
-          <span class="company">{{ .company }}</span>
-          <span class="role">{{ .role }}</span> ({{.startDate}} - {{.endDate}})
-        </p>
-        {{ if .description }}
-        <p>{{ .description }}</p>
-        {{ end }} {{ if .technologies }}
-        <ul class="technologies">
-          {{ range .technologies }}
-          <li>{{ . }}</li>
-          {{ end }}
-        </ul>
-        {{end}}
-      </div>
-      {{end}} {{ end }}
-    </div>
-  </body>
-
-  <script>
-    const selectElm = document.querySelector("select");
-    const changeLang = (event) => {
-      window.location.href = event.target.value;
-    };
-    selectElm.addEventListener("change", changeLang);
-  </script>
-</html>
+<div class="hero">
+  <div class="hero--content">
+    <h2 class="hero--name">{{ .Params.name }}</h2>
+    <p>{{ .Params.intro }}</p>
+  </div>
+  <div class="hero--scroll-down">scroll down</div>
+</div>
+<div id="maincontent">
+  <select class="no-print">
+    {{ range $.Site.Home.AllTranslations }}
+    <option
+      {{
+      if
+      in
+      .RelPermalink
+      $.Page.Language.Lang
+      }}selected{{
+      end
+      }}
+      value="{{.RelPermalink}}"
+    >
+      {{ .Language.LanguageName }}
+    </option>
+    {{ end }}
+  </select>
+  {{ $myData := index .Site.Data .Lang }} {{ with $myData.experiences }} {{range
+  .jobs}}
+  <div class="experience">
+    <p>
+      <span class="company">{{ .company }}</span>
+      <span class="role">{{ .role }}</span> ({{.startDate}} - {{.endDate}})
+    </p>
+    {{ if .description }}
+    <p>{{ .description }}</p>
+    {{ end }} {{ if .technologies }}
+    <ul class="technologies">
+      {{ range .technologies }}
+      <li>{{ . }}</li>
+      {{ end }}
+    </ul>
+    {{end}}
+  </div>
+  {{end}} {{ end }}
+</div>
+{{ end }}
