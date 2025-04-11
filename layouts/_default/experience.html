@@ -1,0 +1,21 @@
+{{ define "main" }}
+<div id="maincontent">
+  {{ with .Site.Data.experiences }} {{range .jobs}}
+  <div class="experience">
+    <p>
+      <span class="company">{{ .company }}</span>
+      <span class="role">{{ .role }}</span> ({{.startDate}} - {{.endDate}})
+    </p>
+    {{ if .description }}
+    <p>{{ .description }}</p>
+    {{ end }} {{ if .technologies }}
+    <ul class="technologies">
+      {{ range .technologies }}
+      <li>{{ . }}</li>
+      {{ end }}
+    </ul>
+    {{end}}
+  </div>
+  {{end}} {{ end }}
+</div>
+{{ end }}
