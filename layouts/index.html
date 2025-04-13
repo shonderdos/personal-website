@@ -1,28 +1,6 @@
 {{ define "main" }}
-<div class="hero">
-  <div class="hero--content">
-    <h2 class="hero--name">{{ .Params.name }}</h2>
-    <p>{{ .Params.intro }}</p>
-  </div>
-  <div class="hero--scroll-down">scroll down</div>
-</div>
-<div id="maincontent">
-  {{ with .Site.Data.experiences }} {{range .jobs}}
-  <div class="experience">
-    <p>
-      <span class="company">{{ .company }}</span>
-      <span class="role">{{ .role }}</span> ({{.startDate}} - {{.endDate}})
-    </p>
-    {{ if .description }}
-    <p>{{ .description }}</p>
-    {{ end }} {{ if .technologies }}
-    <ul class="technologies">
-      {{ range .technologies }}
-      <li>{{ . }}</li>
-      {{ end }}
-    </ul>
-    {{end}}
-  </div>
-  {{end}} {{ end }}
+<div class="container" data-width="small">
+  <h2 class="hero--name">{{ .Params.name }}</h2>
+  <p>{{ .Params.intro }}</p>
 </div>
 {{ end }}

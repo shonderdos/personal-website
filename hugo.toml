@@ -1,3 +1,10 @@
 baseURL = 'https://shonderdos.nl/'
 languageCode = 'en-us'
 title = 'Serge Honderdos - Angular Developer Expert'
+[params]
+  author = 'Serge Honderdos'
+
+[[menu.main]]
+    name = "Experience"
+    weight = 1
+    url = "/experience/"
