@@ -20,7 +20,17 @@
     <ul id="topnav-items" class="topnav-list">
       {{ range sort . }}
       <li class="topnav-item">
-        <a class="topnav-link" href="{{ .URL }}">{{ .Name }}</a>
+        <a
+          class="topnav-link"
+          href="{{ .URL }}"
+          {{
+          if
+          .Params.download
+          }}download{{
+          end
+          }}
+          >{{ .Name }}</a
+        >
       </li>
       {{ end }}
     </ul>

@@ -8,3 +8,10 @@ title = 'Serge Honderdos - Angular Developer Expert'
     name = "Experience"
     weight = 1
     url = "/experience/"
+    params = { download = false }
+
+[[menu.main]]
+    name = "Download Resume"
+    weight = 2
+    url = "/cv-serge-honderdos-angular-expert.pdf"
+    params = { download = true }
