@@ -76,7 +76,9 @@ jobs:
     #environment:
     # name: github-pages
     # url: ${{ steps.deployment.outputs.page_url }}
-    environment: production
+    environment: 
+      name: production
+      url: 'https://www.shonderdos.nl/'
     runs-on: ubuntu-latest
     needs: build
     steps:
