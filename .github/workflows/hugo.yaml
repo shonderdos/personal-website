@@ -97,4 +97,4 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./public/
-          server-dir: /domains/shonderdos.nl/private_html/
+          server-dir: ${{ secrets.FTP_DOCUMENT_ROOT }}
