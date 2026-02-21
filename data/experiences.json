@@ -1,10 +1,45 @@
 {
   "jobs": [
     {
+      "company": "Vattenfall",
+      "role": "Frontend Developer",
+      "startDate": "Sep 2025",
+      "endDate": "Present",
+      "description": "I play a key role in developing cross application features based on a RESTarchitecture in combination with pure frontend technologies. My main responsabilities are building, deploying and maintaining Angular applications within Azure. Coach junior developers to craft the solution so it’s meets the requirements and design. Optimizing developer tooling and challenge business requirements.",
+      "technologies": [
+        "Angular",
+        "TypeScript",
+        "Tailwind",
+        "Storybook",
+        "NGxS",
+        "HTML",
+        "Jest",
+        "Cypress",
+        "NX",
+        "Azure"
+      ]
+    },
+    {
+      "company": "Sytac",
+      "role": "Frontend Developer",
+      "startDate": "Jan 2024",
+      "endDate": "Aug 2025",
+      "description": "Implementing new internal tooling to replace third-party tools and improve the development workflow for back-office. I took up the responsability to implement a more effecient and cost effective solution. This included the migration of the application to a new framework, the introduction of a new CI/CD pipeline and the implementation of new tooling.",
+      "technologies": [
+        "Angular",
+        "TypeScript",
+        "RxJS",
+        "HTML",
+        "Jest",
+        "Cypress",
+        "Azure"
+      ]
+    },
+    {
       "company": "KLM",
       "role": "Frontend Developer",
       "startDate": "Apr 2023",
-      "endDate": "Present",
+      "endDate": "Dec 2023",
       "description": "I contributed to the development of a high-traffic web application that serves hundreds of thousands of global visitors daily. I successfully implemented robust deployment strategies that ensured seamless updates and uninterrupted user sessions. My focus on continuous improvement involved enhancing legacy code while prioritizing usability and accessibility, adhering to WCAG standards to create an inclusive user experience. Additionally, I collaborated with cross-functional teams to optimize performance and maintain high-quality coding practices throughout the development lifecycle.",
       "technologies": [
         "Angular",
@@ -15,8 +50,7 @@
         "Jest",
         "Cypress",
         "GraphQL"
-      ],
-      "link": ""
+      ]
     },
     {
       "company": "Backbase",
