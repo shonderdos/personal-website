@@ -1,5 +1,6 @@
+.angular
 .DS_STORE
 .idea/
 node_modules/
-public/
+dist/
 resources/

@@ -1,0 +1,19 @@
+<div class="container" data-width="narrow">
+  @for(experience of experiences; track experience){
+  <div class="experience">
+    <p>
+      <span class="company">{{ experience.company}}</span>&nbsp;<span
+        class="role"
+        >{{ experience.role}}</span
+      >
+      ({{experience.startDate}} - {{experience.endDate}})
+    </p>
+    <p>{{ experience.description }}</p>
+    <ul class="technologies">
+      @for(technology of experience.technologies; track technology){
+      <li>{{ technology }}</li>
+      }
+    </ul>
+  </div>
+  }
+</div>
