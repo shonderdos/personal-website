@@ -1,0 +1,179 @@
+import { Component } from "@angular/core";
+
+@Component({
+  selector: "app-experiences",
+  templateUrl: "./experiences.html",
+  styleUrl: "./experiences.css",
+})
+export class Experiences {
+  protected readonly experiences = [
+    {
+      company: "Vattenfall",
+      role: "Frontend Developer",
+      startDate: "Sep 2025",
+      endDate: "Present",
+      description:
+        "I play a key role in developing cross application features based on a RESTarchitecture in combination with pure frontend technologies. My main responsabilities are building, deploying and maintaining Angular applications within Azure. Coach junior developers to craft the solution so it’s meets the requirements and design. Optimizing developer tooling and challenge business requirements.",
+      technologies: [
+        "Angular",
+        "TypeScript",
+        "Tailwind",
+        "Storybook",
+        "NGxS",
+        "HTML",
+        "Jest",
+        "Cypress",
+        "NX",
+        "Azure",
+      ],
+    },
+    {
+      company: "Sytac",
+      role: "Frontend Developer",
+      startDate: "Jan 2024",
+      endDate: "Aug 2025",
+      description:
+        "Implementing new internal tooling to replace third-party tools and improve the development workflow for back-office. I took up the responsability to implement a more effecient and cost effective solution. This included the migration of the application to a new framework, the introduction of a new CI/CD pipeline and the implementation of new tooling.",
+      technologies: [
+        "Angular",
+        "TypeScript",
+        "RxJS",
+        "HTML",
+        "Jest",
+        "Cypress",
+        "Azure",
+      ],
+    },
+    {
+      company: "KLM",
+      role: "Frontend Developer",
+      startDate: "Apr 2023",
+      endDate: "Dec 2023",
+      description:
+        "I contributed to the development of a high-traffic web application that serves hundreds of thousands of global visitors daily. I successfully implemented robust deployment strategies that ensured seamless updates and uninterrupted user sessions. My focus on continuous improvement involved enhancing legacy code while prioritizing usability and accessibility, adhering to WCAG standards to create an inclusive user experience. Additionally, I collaborated with cross-functional teams to optimize performance and maintain high-quality coding practices throughout the development lifecycle.",
+      technologies: [
+        "Angular",
+        "TypeScript",
+        "RxJS",
+        "HTML",
+        "SASS",
+        "Jest",
+        "Cypress",
+        "GraphQL",
+      ],
+    },
+    {
+      company: "Backbase",
+      role: "Frontend Developer",
+      startDate: "Jul 2022",
+      endDate: "Apr 2023",
+      description:
+        "I contributed to the development of a cutting-edge online banking platform, collaborating seamlessly with a remote international team and stakeholders to achieve project goals. Ensured strict adherence to comprehensive security protocols critical for financial services. Prioritized user experience (UX) and usability throughout the development process, effectively balancing advanced functionality with intuitive user interface (UI) design to enhance customer satisfaction and engagement.",
+      technologies: ["Angular", "TypeScript", "RxJS", "HTML", "SASS", "Jest"],
+      link: "",
+    },
+    {
+      company: "Athlon Car Lease",
+      role: "Lead Frontend Developer",
+      startDate: "Jun 2021",
+      endDate: "Jul 2022",
+      description:
+        "Leading the developed a digital self-service process engine that accommodated both cross-country and local requirements. Throughout the implementation of this new functionality, I introduced the team to enhanced coding standards, including state management using RxJS, unit testing with Jest, and the adoption of smart/dumb component structures, thereby improving overall code quality and maintainability.",
+      technologies: [
+        "Angular",
+        "Typescript",
+        "RxJS",
+        "Azure",
+        "Jenkins",
+        "Storybook",
+        "HTML",
+        "SCSS",
+        "Jest",
+      ],
+    },
+    {
+      company: "Dutch railways",
+      role: "JavaScript Developer",
+      startDate: "Jun 2020",
+      endDate: "May 2021",
+      description:
+        "I contributed to the development and maintanence multiple applications that play a crucial role in driving digital transformation initiatives at NS. A significant achievement during this time was the successful delivery of the new application, TRIP, which streamlined operations.",
+      technologies: [
+        "Angular",
+        "Angular Material",
+        "NX",
+        "RxJS",
+        "Azure",
+        "Storybook",
+        "Cypress",
+        "Swagger",
+      ],
+    },
+    {
+      company: "Schiphol Group",
+      role: "JavaScript Developer",
+      startDate: "Sep 2018",
+      endDate: "Mar 2020",
+      description:
+        "I contributed to the creation of a robust platform that utilizes live data to deliver real-time insights into operations at Schiphol Airport. By integrating multiple data sources, the application enables proactive identification and mitigation of capacity issues, enhancing operational efficiency and decision-making processes.",
+      technologies: [
+        "Angular",
+        "TypeScript",
+        "RxJS",
+        "Kafka",
+        "Node.js",
+        "Express",
+        "Docker",
+        "Jenkins",
+        "HTML",
+        "CSS",
+        "Cypress",
+        "Jest",
+      ],
+    },
+    {
+      company: "KLM",
+      role: "Frontend Developer",
+      startDate: "Jul 2017",
+      endDate: "Aug 2018",
+      description:
+        "In a startup-like setting, I worked in a small team as the sole frontend developer. Using an agile working method, we made quick iterations to add as much value to the application for the user in a short period of time.",
+      technologies: [
+        "Angular",
+        "JavaScript",
+        "Node.js",
+        "Express",
+        "HTML",
+        "CSS",
+        "Docker",
+        "Bamboo",
+      ],
+    },
+    {
+      company: "KPN",
+      role: "Frontend Developer",
+      startDate: "Jan 2016",
+      endDate: "May 2017",
+      description:
+        "Completely rebuilt the closed environment of Telfort.nl for better user experience and faster load times.",
+      technologies: ["Angular", "JS", "JavaScript", "HTML", "CSS", "Jenkins"],
+    },
+    {
+      company: "Vliegtickets.nl",
+      role: "Developer",
+      startDate: "Jun 2013",
+      endDate: "Dec 2015",
+      description:
+        "In an agile work environment we provided maintenance and built new features for various brands such as, vliegtickets.nl, vliegtickets.be, vliegtarieven.nl, wtc.nl and schipholtickets.nl.",
+      technologies: [
+        "PHP",
+        "JavaScript",
+        "JQuery",
+        "CSS",
+        "HTML",
+        "ZF1",
+        "Jenkins",
+      ],
+    },
+  ];
+}
