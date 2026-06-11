@@ -1,26 +1,24 @@
-<div class="wrapper">
-  <header>
-    <section class="container">
-      <nav class="topnav">
-        <a class="topnav-title" routerLink="/"> Serge Honderdos </a>
-        <a href="/" class="mobilemenu" (click)="toggleMenu($event)">Menu</a>
-        <ul #topnavItems class="topnav-list">
-          <li class="topnav-item">
-            <a class="topnav-link" routerLink="/experiences">Experiences</a>
-          </li>
-          <li class="topnav-item">
-            <a
-              class="topnav-link"
-              download
-              href="cv-serge-honderdos-angular-expert.pdf"
-              >Download Resume</a
-            >
-          </li>
-        </ul>
-      </nav>
-    </section>
-  </header>
-  <main>
-    <router-outlet></router-outlet>
-  </main>
-</div>
+<header>
+  <section class="container">
+    <nav class="topnav">
+      <a class="topnav-title" routerLink="/"> Serge Honderdos </a>
+      <a href="/" class="mobilemenu" (click)="toggleMenu($event)">Menu</a>
+      <ul #topnavItems class="topnav-list">
+        <li class="topnav-item">
+          <a class="topnav-link" routerLink="/experiences">Experiences</a>
+        </li>
+        <li class="topnav-item">
+          <a
+            class="topnav-link"
+            download
+            href="cv-serge-honderdos-angular-expert.pdf"
+            >Download Resume</a
+          >
+        </li>
+      </ul>
+    </nav>
+  </section>
+</header>
+<main>
+  <router-outlet></router-outlet>
+</main>
