@@ -1,6 +1,7 @@
 <div class="container" data-width="narrow">
+  <h1>Experiences</h1>
   @for(experience of experiences; track experience){
-  <div class="experience">
+  <div class="experience" [class.mt-0]="$first">
     <p>
       <span class="company">{{ experience.company}}</span>&nbsp;<span
         class="role"

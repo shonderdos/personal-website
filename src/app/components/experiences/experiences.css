@@ -1,0 +1,31 @@
+.experience {
+  margin-block: 4rem;
+
+  .company {
+    font-weight: 600;
+    color: var(--red);
+  }
+
+  .role {
+    color: var(--green);
+  }
+}
+
+.technologies {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.1rem;
+
+  li {
+    background-color: var(--bg_blue);
+    color: var(--blue);
+    padding: 5px 10px;
+  }
+}
+
+.mt-0 {
+  margin-top: 0;
+}
