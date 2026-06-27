@@ -1,0 +1,10 @@
+:host {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 60px auto 80px;
+}
+
+footer {
+  text-align: center;
+  color: var(--bg_3);
+}

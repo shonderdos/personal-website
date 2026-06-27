@@ -8,4 +8,6 @@ import { Navigation } from "./components/navigation/navigation";
   templateUrl: "./app.html",
   styleUrl: "./app.css",
 })
-export class App {}
+export class App {
+  protected readonly currentYear: number = new Date().getFullYear();
+}
