@@ -1,0 +1,12 @@
+dt,
+dd {
+  display: inline-block;
+}
+
+dd {
+  margin: 0;
+}
+
+.skill {
+  margin-block: 0.25em;
+}
