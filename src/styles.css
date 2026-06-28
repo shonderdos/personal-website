@@ -61,10 +61,6 @@ button {
   cursor: pointer;
 }
 
-a {
-  display: inline-flex;
-}
-
 .container {
   --container-max-width: 1130px;
   --container-padding: 1rem;
