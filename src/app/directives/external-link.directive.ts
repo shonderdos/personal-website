@@ -16,7 +16,7 @@ export class ExternalLinkDirective implements OnInit {
   private readonly renderer = inject(Renderer2);
   private readonly el = inject(ElementRef);
   private readonly size = "0.75rem";
-  private readonly viewBox = "0 0 24 24";
+  private readonly viewBox = "0 5 24 24";
 
   ngOnInit() {
     if (!isPlatformBrowser(this.platformId)) {
