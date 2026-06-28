@@ -1,21 +1,32 @@
 :root {
-  color-scheme: light dark;
-
+  --foreground: light-dark(#5c6a72, #d3c6aa);
+  --grey0: light-dark(#a6b0a0, #7a8478);
+  --bg_visual: light-dark(#f0f2d4, #4c3743);
   --bg_dim: light-dark(#f2efdf, #1e2326);
   --bg_0: light-dark(#fffbef, #272e33);
+  --bg_1: light-dark(#f8f5e4, #2e383c);
   --bg_3: light-dark(#edeada, #495156);
   --bg_red: light-dark(#ffe7de, #4c3743);
+  --bg_green: light-dark(#f3f5d9, #3c4841);
   --bg_blue: light-dark(#ecf5ed, #384b55);
-  --fg: light-dark(#5c6a72, #d3c6aa);
   --blue: light-dark(#3a94c5, #7fbbb3);
+  --yellow: light-dark(#dfa000, #dbbc7f);
   --red: light-dark(#f85552, #e67e80);
   --green: light-dark(#8da101, #a7c080);
   --purple: light-dark(#df69ba, #d699b6);
   --statusline1: light-dark(#93b259, #a7c080);
 }
 
+html[data-theme="light"] {
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+}
+
 ::selection {
-  background: var(--bg_red);
+  background: var(--bg_visual);
 }
 
 html,
@@ -23,8 +34,8 @@ body {
   margin: 0;
 }
 body {
-  background-color: var(--bg_dim);
-  color: var(--fg);
+  background-color: var(--bg_0);
+  color: var(--foreground);
 
   font-family: "Hack", serif;
 
@@ -41,7 +52,13 @@ body {
 }
 
 header {
-  background-color: var(--bg_0);
+  background-color: var(--bg_1);
+}
+
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
 }
 
 .container {

@@ -15,6 +15,15 @@
   display: none;
 }
 
+button svg {
+  fill: transparent;
+  color: var(--yellow);
+}
+
+.topnav-item {
+  display: flex;
+  align-items: center;
+}
 @media (max-width: 768px) {
   .mobilemenu {
     display: initial;
@@ -32,7 +41,7 @@
 
     height: auto;
     text-align: right;
-    background-color: #ddd;
+    background-color: var(--bg_1);
     display: flex;
     flex-direction: column;
   }
@@ -41,7 +50,6 @@
     border-top: solid 1px #999;
     min-width: 200px;
     padding: 12px 24px;
-    background-color: var(--bg_0);
   }
   .topnav-item:first-of-type {
     border-top: none;
