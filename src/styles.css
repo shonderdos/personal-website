@@ -50,3 +50,19 @@ body {
 
   line-height: 1.7;
 }
+.container {
+  --container-max-width: 1130px;
+  --container-padding: 1rem;
+
+  max-width: var(--container-max-width);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+
+  &[data-width="small"] {
+    --container-max-width: 920px;
+  }
+
+  &[data-width="narrow"] {
+    --container-max-width: 750px;
+  }
+}
