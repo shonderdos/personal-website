@@ -1,0 +1,22 @@
+<div class="container" data-width="narrow">
+  <h1>Library</h1>
+  <p>A small collection of books I have read.</p>
+
+  <section class="book-grid" aria-label="Books">
+    @for (book of books; track book.title) {
+    <article class="book">
+      <div class="book-cover-frame">
+        <img
+          class="book-cover"
+          [src]="book.cover"
+          [alt]="'Cover of ' + book.title"
+        />
+      </div>
+      <div class="book-details">
+        <h2>{{ book.title }}</h2>
+        <p>{{ book.author }}</p>
+      </div>
+    </article>
+    }
+  </section>
+</div>
