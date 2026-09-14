@@ -1,18 +1,20 @@
 <nav class="topnav">
-  <a class="topnav-title" routerLink="/"> Serge Honderdos </a>
-  <a href="/" class="mobilemenu" (click)="toggleMenu($event)">Menu</a>
+  <a class="topnav-title underline" routerLink="/"> Serge Honderdos </a>
+  <a href="/" class="mobilemenu underline" (click)="toggleMenu($event)"
+    >Menu</a
+  >
   <ul #topnavItems class="topnav-list">
     <li class="topnav-item">
-      <a routerLink="/about-me">About me</a>
+      <a class="underline" routerLink="/about-me">About me</a>
     </li>
     <li class="topnav-item">
-      <a routerLink="/experiences">Experiences</a>
+      <a class="underline" routerLink="/experiences">Experiences</a>
     </li>
     <li class="topnav-item">
-      <a routerLink="/contact">Contact</a>
+      <a class="underline" routerLink="/contact">Contact</a>
     </li>
     <li class="topnav-item">
-      <a download href="cv-serge-honderdos-angular-expert.pdf"
+      <a class="underline" download href="cv-serge-honderdos-angular-expert.pdf"
         >Download Resume</a
       >
     </li>
