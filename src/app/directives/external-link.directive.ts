@@ -27,6 +27,7 @@ export class ExternalLinkDirective implements OnInit {
     this.renderer.setAttribute(svg, "viewBox", this.viewBox);
     this.renderer.setAttribute(svg, "width", this.size);
     this.renderer.setAttribute(svg, "height", this.size);
+    this.renderer.addClass(svg, "inline");
 
     const p2 = this.renderer.createElement("path", "svg");
     this.renderer.setAttribute(p2, "fill", "none");
